@@ -10,9 +10,9 @@ for i in subdominiuns:
     sub = i[:len(i)-1]
     dns_nome = sub + "." + dominio
     try:
-        resultado = dns.resolver.query(dns_nome)
+        resultado = dns.resolver.query(qname=dns_nome, tcp=False, rdtype="a")
         for resposta in resultado:
-            print(dns_nome, resultado[0].address)
+            print("SUBDOMINIO: ",sub,"  /  " "DNS: ", dns_nome,"  /  IP: ", resultado[0].address)
     except:
         pass
 arquivo.close()
