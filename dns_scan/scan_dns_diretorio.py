@@ -1,8 +1,12 @@
+################################ IMPORTs ######################################
+
 import dns.resolver
 import sys
 import urllib.request
+import urllib.response
+import re
 
-
+###############################################################################
 
 dominio = sys.argv[1]
 nome_arquivo = sys.argv[2]
