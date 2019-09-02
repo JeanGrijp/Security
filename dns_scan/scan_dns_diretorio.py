@@ -1,3 +1,15 @@
+"""
+Copyright GRIJP, Jean.
+
+Este código ainda está incompleto, em relação ao esperado, mas 
+se colocar a seguinte linha do comando no linux, ele executa.
+>>> python3 site arquivo_de_subdominiuns_dns.
+
+um detalhe, a biblioteca dns.resolver não vem com o python
+sendo necessario instalar com o pip no seguinte comando.
+>>> pip install dnspython
+
+"""
 ################################ IMPORTs ######################################
 
 import dns.resolver
