@@ -14,19 +14,44 @@ sendo necessario instalar com o pip no seguinte comando.
 
 import dns.resolver
 import sys
-import urllib.request
-import urllib.response
+import requests
 import re
 
 ###############################################################################
+######################################## Funções ##############################
 
-dominio = sys.argv[1]
-nome_arquivo = sys.argv[2]
-arquivo_diretorios = sys.argv[3]
-with open(nome_arquivo, "r") as arquivo:
-    var = arquivo.readlines()
+def getDiretorio():
+    with open("diretorios.txt") as arquivo:
+        var = arquivo.readlines()
+        let = []
+        for i in var:
+            string = ""
+            for j in range(0, len(i)-1):
+                string += i[j]
+            let.append(string)
+            string = ""
+        let[-1] = let[-1] + "e"
+        return let
+
+###############################################################################
+
+
+
+url = "https://twitter.com"
+r = requests.get(url)
+status = r.status_code
+
+
+#dominio = sys.argv[1]
+dominio = url
+#nome_arquivo = sys.argv[2]
+nome_arquivo = "subdns.txt"
+#arquivo_diretorios = sys.argv[3]
+arquivo_diretorios = getDiretorio()
+with open(nome_arquivo, "r") as subdominiuns:
+    sub = subdominiuns.readlines()
     let = []
-    for i in var:
+    for i in sub:
         string = ""
         for j in range(0, len(i)-1):
             string += i[j]
